@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+
+    /* --- New background texture (matched to your image) --- */
+    background: linear-gradient(
+                    to right,
+                    rgba(245, 220, 188, 0.95) 0%,
+                    rgba(240, 205, 180, 0.92) 20%,
+                    rgba(232, 190, 175, 0.90) 40%,
+                    rgba(210, 165, 155, 0.92) 60%,
+                    rgba(185, 140, 130, 0.93) 80%,
+                    rgba(165, 120, 120, 0.95) 100%
+               ),
+               radial-gradient(circle at 40% 10%, rgba(180,160,230,0.28), transparent 60%);
+    
+    background-size: cover;
+    background-blend-mode: soft-light;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
+
+.title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    background: linear-gradient(90deg, #00eaff, #ff3b3b, #ff00ff, #00ff95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 0 8px rgba(0, 234, 255, 0.6),
+        0 0 12px rgba(255, 59, 59, 0.5),
+        0 0 15px rgba(0, 255, 149, 0.4);
+    animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+    0% {
+        text-shadow: 
+            0 0 8px rgba(0, 234, 255, 0.6),
+            0 0 12px rgba(255, 59, 59, 0.5),
+            0 0 15px rgba(0, 255, 149, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 
+            0 0 12px rgba(0, 234, 255, 0.8),
+            0 0 16px rgba(255, 59, 59, 0.7),
+            0 0 20px rgba(0, 255, 149, 0.6);
+        transform: scale(1.05);
+    }
+    100% {
+        text-shadow: 
+            0 0 8px rgba(0, 234, 255, 0.6),
+            0 0 12px rgba(255, 59, 59, 0.5),
+            0 0 15px rgba(0, 255, 149, 0.4);
+        transform: scale(1);
+    }
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0px 0px 20px rgba(0, 238, 255, 0.4);
+}
+
+/* Reduced webcam size */
+.video-card video {
+    width: 70%;
+    max-width: 480px;
+    border-radius: 16px;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.2),
+        0 0 30px rgba(161, 196, 253, 0.3),
+        0 0 50px rgba(194, 233, 251, 0.2);
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: 0.3s ease;
+}
+
+.status-card {
+    text-align: center;
+}
+
+/* Updated status background for visibility */
+.status {
+    margin-top: 10px;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 10px 16px;
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.25); /* darker = readable text */
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+/* AWAKE – optional green tint if you want */
+.awake {
+    color: #046b23;
+}
+
+/* DROWSY – optional red tint */
+.drowsy {
+    color: #6e0505;
+}
+
+@keyframes blink {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
